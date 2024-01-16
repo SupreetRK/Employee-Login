@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 5px;
+      transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    }
+
+    #loginBtn {
+      background-color: #4caf50;
+      color: #fff;
+    }
+
+    #registerBtn {
+      background-color: #3498db;
+      color: #fff;
+    }
+
+    button:hover {
+      box-shadow: 0 0 20px rgba(255, 65, 65, 0.977);
+      transform: translateY(-10px);
+    }
+
+    button:active {
+      box-shadow: 0 0 10px rgb(237, 66, 66);
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+<form action="Display.jsp">
+<script>
+    function validate() {
+      var enteredId = document.getElementById('id').value;
+      var enteredPassword = document.getElementById('password').value;
+
+   
+      var validId = 'Chetan';
+      var validPassword = '@8099';
+
+      if (enteredId === validId && enteredPassword === validPassword) {
+        alert('Login successful!');
+        window.location.href = 'Display.jsp';
+       
+      } else {
+        alert('Invalid ID or password. Please try again.');
+      }
+    }
+  </script>
+<h1>ID:</h1><input type="text" id="id" placeholder="Enter ID" required >
+<br>
+<h1>Password:</h1><input type="text" id="password" placeholder="Enter Password" required>
+<br>
+
+<button type="submit" value="send" onclick="validate()"  id="loginBtn">Login</button>
+</form>
+<form action="Register.jsp">
+<button type="submit" value="send" id="registerBtn">Register</button>
+</form>
+
+</body>
+</html>
